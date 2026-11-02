@@ -1,0 +1,1586 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Parisienne&display=swap');
+
+/* =========================================
+   1. COLORS AND RESET
+========================================= */
+
+:root {
+    --cream: #fffaf5;
+    --soft-pink: #f8e8e8;
+    --blush: #efd0d2;
+    --dusty-rose: #bd858c;
+    --rose-dark: #93636b;
+    --brown: #705957;
+    --light-brown: #a18b83;
+    --white: #ffffff;
+    --shadow: rgba(126, 83, 86, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cream);
+    background-image:
+        linear-gradient(
+            rgba(255, 250, 245, 0.30),
+            rgba(255, 250, 245, 0.30)
+        ),
+        url("assets/solace-background.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: var(--brown);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.7;
+}
+
+p {
+    color: var(--brown);
+}
+
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--rose-dark);
+    font-weight: 600;
+}
+
+h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+img, video {
+    max-width: 100%;
+}
+
+/* =========================================
+   2. MAIN WEBSITE LAYOUT
+========================================= */
+
+.website-layout {
+    min-height: 100vh;
+    background: transparent;
+}
+
+.site-content {
+    margin-left: 230px;
+    min-width: 0;
+    background: transparent;
+}
+
+/* =========================================
+   3. SIDEBAR
+========================================= */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 230px;
+    height: 100vh;
+    background: #f8e9e4;
+    border-right: 1px solid #e9cfc8;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    overflow-y: auto;
+}
+
+.sidebar-brand {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar-brand h2 {
+    font-family: 'Parisienne', cursive;
+    font-size: 30px;
+    color: #a66f70;
+}
+
+.sidebar-brand p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 12px 14px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #805c59;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    background: #efd4d0;
+    color: #965f65;
+    transform: translateX(3px);
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.sidebar-footer p {
+    font-family: 'Parisienne', cursive;
+    font-size: 1.3rem;
+    color: #a66f70;
+    margin-bottom: 20px;
+}
+
+.sidebar-footer small {
+    color: #805c59;
+    line-height: 1.8;
+}
+
+/* =========================================
+   4. HOMEPAGE HERO
+========================================= */
+
+#home.hero {
+    min-height: 650px;
+    background:
+        linear-gradient(rgba(70, 35, 45, 0.20), rgba(70, 35, 45, 0.30)),
+        url("assets/hero-sunset.jpg") center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 0 25px 25px;
+}
+
+#home.hero h1 {
+    font-family: 'Parisienne', cursive;
+    font-size: clamp(55px, 7vw, 90px);
+    color: white;
+    text-shadow: 0 2px 15px rgba(70, 40, 40, 0.2);
+}
+
+#home.hero p {
+    color: white;
+}
+
+#home .hero-note {
+    font-family: 'Parisienne', cursive;
+    font-size: 1.5rem;
+    margin: 25px 0;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+}
+
+#home .hero-button {
+    display: inline-block;
+    background: #fff5f0;
+    color: #805c59;
+    text-decoration: none;
+    padding: 15px 28px;
+    border-radius: 30px;
+    margin-top: 15px;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+#home .hero-button:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   5. GENERAL SECTIONS
+========================================= */
+
+.section {
+    padding: 85px 7%;
+    scroll-margin-top: 25px;
+    background: transparent;
+}
+
+.site-content .section {
+    padding: 75px 6%;
+    background: transparent;
+}
+
+.section:nth-of-type(even) {
+    background: transparent;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 35px;
+}
+
+.eyebrow {
+    color: var(--dusty-rose);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.72rem;
+    margin-bottom: 10px;
+}
+
+.section-description,
+.section-intro {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 25px;
+    color: var(--light-brown);
+}
+
+.subheading {
+    margin: 35px 0 15px;
+    color: var(--rose-dark);
+}
+
+/* =========================================
+   6. FEATURE CARDS
+========================================= */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.90);
+    padding: 28px 22px;
+    border-radius: 18px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--brown);
+    border: 1px solid #f3e2df;
+    box-shadow: 0 5px 20px var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px var(--shadow);
+}
+
+/* =========================================
+   7. PHOTO AND VIDEO GALLERIES
+========================================= */
+
+.memory-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 35px 25px;
+    margin-top: 35px;
+    padding: 25px 10px;
+    align-items: center;
+}
+
+.memory-photo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-width: 0;
+    height: auto;
+    background: #fffdf9;
+    padding: 10px 10px 35px;
+    border: 1px solid #f5e9e5;
+    border-radius: 3px;
+    box-shadow: 0 7px 18px rgba(91, 59, 55, 0.15);
+    transform: rotate(-2deg);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    overflow: visible;
+}
+
+.memory-photo:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.memory-photo:nth-child(3n) {
+    transform: rotate(-1deg);
+}
+
+.memory-photo:hover {
+    transform: rotate(0deg) translateY(-8px) scale(1.04);
+    box-shadow: 0 15px 28px rgba(91, 59, 55, 0.22);
+    z-index: 2;
+}
+
+.memory-photo img,
+.memory-photo video {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    object-fit: contain;
+    object-position: center;
+    background: #f8f1ed;
+    border-radius: 2px;
+}
+
+.memory-photo p {
+    text-align: center;
+    padding: 10px 4px 3px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    color: var(--rose-dark);
+}
+
+.memory-photo.landscape {
+    grid-column: span 2;
+}
+
+.memory-photo.portrait {
+    grid-column: span 1;
+}
+
+/* =========================================
+   8. STORIES
+========================================= */
+
+.story-card {
+    position: relative;
+    min-height: 220px;
+    padding: 35px 25px !important;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fffaf5;
+    border: 1px solid #eadbd2;
+}
+
+.story-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    color: #805d58;
+    margin-bottom: 12px;
+}
+
+.story-card p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #806f69;
+}
+
+.story-number {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #b58d83;
+}
+
+.story-decoration {
+    font-size: 27px;
+    color: #c18e91;
+    margin-bottom: 12px;
+}
+
+.story-footer {
+    margin-top: 20px;
+    font-family: 'Parisienne', cursive;
+    font-size: 17px;
+    color: #b18486;
+}
+
+/* =========================================
+   9. LOVE LETTER ENVELOPES
+========================================= */
+
+.envelope {
+    text-align: center;
+    padding: 25px 15px;
+    background: linear-gradient(145deg, #fff9f5, #f8e5e5);
+    border: 1px solid var(--blush);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.envelope:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow);
+}
+
+.envelope span {
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.envelope h3 {
+    margin-bottom: 5px;
+}
+
+.envelope p {
+    font-size: 0.85rem;
+    color: var(--light-brown);
+}
+
+/* =========================================
+   10. OUR MUSIC ROOM
+========================================= */
+
+#music {
+    background: transparent;
+}
+
+.playlist-list {
+    max-width: 850px;
+    margin: 30px auto;
+}
+
+.music-player {
+    padding: 32px;
+    margin-bottom: 30px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #f3dddd, #fff8f3);
+    border: 1px solid #e8caca;
+    box-shadow: 0 10px 30px rgba(126, 83, 86, 0.12);
+}
+
+.music-player-header {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 28px;
+}
+
+.music-cover {
+    width: 110px;
+    height: 110px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #bd858c, #93636b);
+    box-shadow: 0 7px 18px rgba(91, 59, 55, 0.18);
+}
+
+.music-cover span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 65px;
+    color: white;
+}
+
+.music-now-playing {
+    min-width: 0;
+}
+
+.music-label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #a6787a;
+    margin-bottom: 7px;
+}
+
+.music-now-playing h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 27px;
+    color: #80575d;
+    overflow-wrap: anywhere;
+}
+
+.music-now-playing p {
+    color: #a18b83;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* Progress bar */
+
+.music-progress-area {
+    width: 100%;
+    margin-bottom: 22px;
+}
+
+.music-progress {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 10px;
+    background: #e6c7c6;
+    outline: none;
+    cursor: pointer;
+    accent-color: #a66f70;
+}
+
+.music-progress::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 13px;
+    height: 13px;
+    background: #a66f70;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.music-progress::-moz-range-thumb {
+    width: 13px;
+    height: 13px;
+    background: #a66f70;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.music-time {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7px;
+    font-size: 11px;
+    color: #a18b83;
+}
+
+/* Player controls */
+
+.music-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.music-controls button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: #93636b;
+    border: none;
+    font-size: 19px;
+    padding: 10px;
+    transition: 0.3s ease;
+}
+
+.music-controls button:hover {
+    background: transparent;
+    color: #bd858c;
+    transform: scale(1.12);
+}
+
+.music-controls .play-track {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #a66f70;
+    color: white;
+    font-size: 21px;
+    box-shadow: 0 5px 15px rgba(126, 83, 86, 0.2);
+}
+
+.music-controls .play-track:hover {
+    background: #93636b;
+    color: white;
+}
+
+.music-caption {
+    text-align: center;
+    font-family: 'Parisienne', cursive;
+    font-size: 18px;
+    color: #a6787a;
+    margin-top: 20px;
+}
+
+/* Playlist heading */
+
+.playlist-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 35px 5px 18px;
+}
+
+.playlist-heading h3 {
+    font-size: 25px;
+    color: #80575d;
+}
+
+.song-count {
+    font-size: 12px;
+    color: #a18b83;
+    background: #fff8f4;
+    border: 1px solid #efd9d5;
+    padding: 7px 13px;
+    border-radius: 20px;
+}
+
+/* Song list */
+
+.music-track-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.music-track {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    text-align: left;
+    padding: 13px 17px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid #f1e1dc;
+    color: #705957;
+    transition: 0.25s ease;
+}
+
+.music-track:hover {
+    background: #f8e8e8;
+    transform: translateX(4px);
+}
+
+.music-track.active-track {
+    background: #f1dcdc;
+    border-color: #d8b4b3;
+}
+
+.track-number {
+    width: 25px;
+    flex-shrink: 0;
+    font-size: 12px;
+    color: #a18b83;
+    text-align: center;
+}
+
+.track-icon {
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #f7e8e5;
+    color: #a66f70;
+    font-size: 19px;
+}
+
+.active-track .track-icon {
+    background: #bd858c;
+    color: white;
+}
+
+.track-details {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.track-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    color: #80575d;
+    font-weight: 600;
+}
+
+.track-subtitle {
+    font-size: 10px;
+    color: #a18b83;
+}
+
+.track-status {
+    font-size: 17px;
+    color: #bd858c;
+}
+
+/* =========================================
+   11. OTHER ELEMENTS
+========================================= */
+
+.empty-note {
+    text-align: center;
+    padding: 30px;
+    color: var(--light-brown);
+    font-style: italic;
+}
+
+button {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--dusty-rose);
+    color: white;
+    border: none;
+    padding: 11px 23px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background: var(--rose-dark);
+    transform: translateY(-2px);
+}
+
+.modal,
+.letter-modal {
+    background: rgba(65, 43, 45, 0.55);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content,
+.letter-modal-content {
+    background: var(--cream);
+    color: var(--brown);
+    border-radius: 18px;
+    padding: 35px;
+    max-width: 500px;
+    box-shadow: 0 10px 40px rgba(50, 30, 30, 0.2);
+}
+
+/* =========================================
+   12. MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 750px) {
+
+    body {
+        background-attachment: scroll;
+        background-position: center top;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 18px 12px;
+    }
+
+    .sidebar-brand {
+        margin-bottom: 15px;
+    }
+
+    .sidebar-brand h2 {
+        font-size: 2rem;
+    }
+
+    .sidebar-footer {
+        display: none;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sidebar-nav a {
+        font-size: 0.95rem;
+        padding: 7px 10px;
+    }
+
+    .site-content {
+        margin-left: 0;
+    }
+
+    #home.hero {
+        min-height: 430px;
+        justify-content: center;
+        padding: 45px 20px;
+    }
+
+    #home.hero h1 {
+        font-size: 4rem;
+    }
+
+    .site-content .section {
+        padding: 55px 5%;
+    }
+
+    .memory-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px 12px;
+        padding: 15px 5px;
+    }
+
+    .memory-photo {
+        padding: 8px 8px 25px;
+    }
+
+    .memory-photo img,
+    .memory-photo video {
+        max-height: 350px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .music-player {
+        padding: 23px 17px;
+    }
+
+    .music-player-header {
+        gap: 15px;
+    }
+
+    .music-cover {
+        width: 85px;
+        height: 85px;
+    }
+
+    .music-cover span {
+        font-size: 48px;
+    }
+
+    .music-now-playing h3 {
+        font-size: 22px;
+    }
+
+    .music-controls {
+        gap: 18px;
+    }
+
+    .playlist-heading h3 {
+        font-size: 21px;
+    }
+
+    .music-track {
+        padding: 11px 10px;
+        gap: 10px;
+    }
+
+    .track-title {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .memory-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .memory-photo.landscape,
+    .memory-photo.portrait {
+        grid-column: span 1;
+    }
+
+    .music-cover {
+        width: 70px;
+        height: 70px;
+    }
+
+    .music-now-playing h3 {
+        font-size: 19px;
+    }
+}
+
+/* =========================================
+   13. MY SOLACE FOOTER
+========================================= */
+
+.footer {
+    position: relative;
+    width: 100%;
+    padding: 65px 25px 35px;
+    margin-top: 30px;
+    text-align: center;
+    background: rgba(255, 250, 245, 0.78);
+    border-top: 1px solid rgba(189, 133, 140, 0.25);
+    overflow: hidden;
+}
+
+.footer::before {
+    content: "✧  ♡  ✧";
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 23px;
+    letter-spacing: 10px;
+    color: var(--dusty-rose);
+    margin-bottom: 20px;
+}
+
+.footer p:first-child {
+    font-family: 'Parisienne', cursive;
+    font-size: clamp(24px, 4vw, 34px);
+    color: var(--rose-dark);
+    margin-bottom: 10px;
+}
+
+.footer p:last-child {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: var(--light-brown);
+}
+
+.footer::after {
+    content: "♡";
+    display: block;
+    font-size: 16px;
+    color: var(--dusty-rose);
+    margin-top: 22px;
+    opacity: 0.8;
+}
+
+@media (max-width: 750px) {
+    .footer {
+        padding: 45px 18px 28px;
+        margin-top: 15px;
+    }
+
+    .footer p:first-child {
+        font-size: 27px;
+    }
+
+    .footer p:last-child {
+        font-size: 14px;
+    }
+}
+
+/* =========================================
+   14. LOVE LETTERS - OPENING ENVELOPES
+========================================= */
+
+#love-letters .love-letter-gallery {
+    width: min(100%, 1050px);
+    margin: 35px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 28px;
+}
+
+#love-letters .love-letter-card {
+    min-width: 0;
+    text-align: center;
+}
+
+#love-letters .letter-envelope-wrap {
+    position: relative;
+    z-index: 2;
+    padding: 18px 8px 12px;
+}
+
+#love-letters .letter-envelope {
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-height: 205px;
+    padding: 0 12px 18px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 7px;
+    overflow: visible;
+    border: 0;
+    border-radius: 5px 5px 12px 12px;
+    color: var(--brown);
+    background: transparent;
+    box-shadow: none;
+    transform: none;
+    cursor: pointer;
+}
+
+#love-letters .letter-envelope:hover {
+    background: transparent;
+    transform: translateY(-4px);
+}
+
+#love-letters .letter-envelope::before {
+    content: "";
+    position: absolute;
+    inset: 40px 0 0;
+    z-index: 0;
+    border: 1px solid #e5c9c5;
+    border-radius: 7px 7px 12px 12px;
+    background: linear-gradient(145deg, #f8e7e4, #efd1d1);
+    box-shadow: 0 9px 20px rgba(126, 83, 86, 0.12);
+}
+
+#love-letters .envelope-number,
+#love-letters .envelope-caption,
+#love-letters .envelope-hint {
+    position: relative;
+    z-index: 4;
+}
+
+#love-letters .envelope-number {
+    position: absolute;
+    top: 51px;
+    left: 15px;
+    color: #a77b79;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+#love-letters .envelope-letter-preview {
+    position: absolute;
+    z-index: 1;
+    top: 15px;
+    left: 17%;
+    width: 66%;
+    height: 115px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #eadbd2;
+    background: #fffdf9;
+    color: #bd858c;
+    font-family: 'Parisienne', cursive;
+    font-size: 34px;
+    transition: transform 0.65s cubic-bezier(.2,.75,.25,1);
+}
+
+#love-letters .envelope-pocket {
+    position: absolute;
+    z-index: 2;
+    inset: 40px 0 0;
+    border-radius: 7px 7px 12px 12px;
+    background: linear-gradient(145deg, #f4dddd, #e9c4c6);
+    clip-path: polygon(0 0, 50% 55%, 100% 0, 100% 100%, 0 100%);
+    pointer-events: none;
+}
+
+#love-letters .envelope-flap {
+    position: absolute;
+    z-index: 3;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 105px;
+    background: #f8e8e5;
+    border: 1px solid #e5c9c5;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    transform-origin: top center;
+    transition: transform 0.55s ease, opacity 0.35s ease;
+    backface-visibility: hidden;
+    pointer-events: none;
+}
+
+#love-letters .envelope-seal {
+    position: absolute;
+    z-index: 4;
+    top: 103px;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #fffaf5;
+    background: #b77e84;
+    font-size: 17px;
+    transform: translateX(-50%);
+    transition: opacity 0.25s ease;
+}
+
+#love-letters .envelope-caption {
+    margin-top: 145px;
+    color: #805d58;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+#love-letters .envelope-hint {
+    color: #a98780;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+#love-letters .letter-envelope.is-open .envelope-flap {
+    transform: rotateX(180deg);
+    opacity: 0.25;
+}
+
+#love-letters .letter-envelope.is-open .envelope-seal {
+    opacity: 0;
+}
+
+#love-letters .letter-envelope.is-open .envelope-letter-preview {
+    transform: translateY(-35px);
+}
+
+/* LETTER PAPER */
+
+#love-letters .love-letter-paper {
+    position: relative;
+    z-index: 1;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 25px;
+    opacity: 0;
+    transform: translateY(-22px);
+    border: 1px solid transparent;
+    background: #fffdf9;
+    box-shadow: 0 8px 22px rgba(126, 83, 86, 0.09);
+    transition:
+        max-height 0.65s ease,
+        opacity 0.4s ease,
+        transform 0.55s ease,
+        padding 0.4s ease;
+}
+
+#love-letters .love-letter-card.is-open .love-letter-paper {
+    max-height: 520px;
+    padding: 25px 25px 20px;
+    opacity: 1;
+    transform: translateY(0);
+    border-color: #eadbd2;
+}
+
+#love-letters .paper-top {
+    margin-bottom: 10px;
+    color: #b18486;
+    font-family: 'Parisienne', cursive;
+    font-size: 19px;
+}
+
+#love-letters .love-letter-paper h3 {
+    margin-bottom: 13px;
+    color: #805d58;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    line-height: 1.2;
+}
+
+#love-letters .paper-message {
+    max-height: 245px;
+    overflow-y: auto;
+    padding: 0 5px 0 0;
+    color: #806f69;
+    font-size: 13px;
+    line-height: 1.9;
+    text-align: left;
+}
+
+/* PARAGRAPH SPACING AND HEADINGS INSIDE LETTERS */
+
+#love-letters .paper-message p {
+    margin: 0 0 1.15em;
+    white-space: normal;
+}
+
+#love-letters .paper-message p:last-child {
+    margin-bottom: 0;
+}
+
+#love-letters .paper-message h4 {
+    margin: 1.8em 0 0.8em;
+    color: #93636b;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+#love-letters .paper-message h4:first-child {
+    margin-top: 0;
+}
+
+#love-letters .paper-signature {
+    margin-top: 16px;
+    color: #b18486;
+    font-family: 'Parisienne', cursive;
+    font-size: 20px;
+}
+
+#love-letters .close-letter {
+    margin-top: 14px;
+    padding: 8px 17px;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+/* RESPONSIVE LOVE LETTERS */
+
+@media (max-width: 850px) {
+    #love-letters .love-letter-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    #love-letters .love-letter-gallery {
+        grid-template-columns: 1fr;
+        max-width: 360px;
+        gap: 18px;
+    }
+
+    #love-letters .letter-envelope {
+        min-height: 195px;
+    }
+
+    #love-letters .love-letter-card.is-open .love-letter-paper {
+        max-height: 560px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #love-letters .letter-envelope,
+    #love-letters .envelope-flap,
+    #love-letters .envelope-letter-preview,
+    #love-letters .love-letter-paper {
+        transition: none !important;
+    }
+}
+
+/* =========================================
+   OUR STORIES - CLEAN SCRAPBOOK TIMELINE
+========================================= */
+
+.our-stories-section {
+    padding-top: 90px;
+    padding-bottom: 100px;
+}
+
+/* Story list */
+.story-timeline {
+    width: min(100%, 820px);
+    margin: 45px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* Individual story card */
+.story-entry {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-width: 0;
+
+    padding: 35px 42px;
+    margin: 0;
+
+    background: rgba(255, 253, 249, 0.96);
+    border: 1px solid #eadbd2;
+    border-radius: 15px;
+
+    box-shadow: 0 7px 22px rgba(91, 59, 55, 0.08);
+
+    text-align: left;
+    transform: none;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.story-entry:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(91, 59, 55, 0.12);
+    border-color: #dcbfc0;
+}
+
+/* Date and story number */
+.story-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    padding-bottom: 16px;
+    margin-bottom: 22px;
+
+    border-bottom: 1px solid #f0e3dd;
+}
+
+.story-number {
+    position: static;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #b18486;
+}
+
+.story-date {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: #a18b83;
+}
+
+/* Story title */
+.story-entry h3 {
+    margin: 0 0 8px;
+    padding: 0;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(25px, 3vw, 32px);
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: 0;
+    word-spacing: normal;
+
+    color: #80575d;
+    text-align: left;
+}
+
+/* Location and time */
+.story-location {
+    margin: 0 0 24px;
+    padding: 0;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.7;
+    letter-spacing: 0.4px;
+    word-spacing: normal;
+
+    color: #b18486;
+    text-align: left;
+}
+
+/* Main story paragraphs */
+.story-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.story-content p {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+
+    line-height: 2;
+    letter-spacing: 0;
+    word-spacing: normal;
+    text-align: left;
+
+    color: #75635f;
+
+    overflow-wrap: break-word;
+    word-break: normal;
+    hyphens: none;
+}
+
+/* Decorative ending */
+.story-footer {
+    display: block;
+    margin-top: 28px;
+    padding-top: 17px;
+
+    border-top: 1px solid #f0e3dd;
+
+    font-family: 'Parisienne', cursive;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
+    word-spacing: normal;
+
+    color: #b18486;
+    text-align: right;
+}
+
+/* Final message */
+.stories-ending {
+    margin: 55px auto 0;
+    padding: 0 15px;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    line-height: 1.8;
+    letter-spacing: 0;
+    word-spacing: normal;
+
+    color: #806f69;
+    text-align: center;
+}
+
+.stories-ending span {
+    display: block;
+    margin-top: 5px;
+
+    font-family: 'Parisienne', cursive;
+    font-size: 25px;
+    color: #b18486;
+}
+
+/* Tablet and mobile */
+@media (max-width: 750px) {
+
+    .our-stories-section {
+        padding-top: 60px;
+        padding-bottom: 70px;
+    }
+
+    .story-timeline {
+        width: 100%;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .story-entry {
+        padding: 27px 23px;
+        border-radius: 12px;
+    }
+
+    .story-top {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 18px;
+    }
+
+    .story-entry h3 {
+        font-size: 27px;
+    }
+
+    .story-location {
+        margin-bottom: 19px;
+    }
+
+    .story-content {
+        gap: 13px;
+    }
+
+    .story-content p {
+        font-size: 13px;
+        line-height: 1.9;
+    }
+
+    .story-footer {
+        font-size: 18px;
+        margin-top: 23px;
+    }
+
+    .stories-ending {
+        margin-top: 40px;
+        font-size: 17px;
+    }
+}
+
+
+
+/* =========================================
+   OUR STORIES — MEMORY TIMELINE
+========================================= */
+
+.story-timeline {
+    max-width: 900px;
+    margin: 45px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.story-entry {
+    position: relative;
+    background: #fffaf5;
+    border: 1px solid #eadbd2;
+    border-radius: 18px;
+    padding: 35px 42px;
+    box-shadow: 0 8px 25px rgba(112, 89, 87, 0.07);
+    overflow: hidden;
+}
+
+.story-entry::before {
+    content: "♡";
+    position: absolute;
+    top: 15px;
+    right: 24px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: #d8aeb0;
+    opacity: 0.8;
+}
+
+.story-entry .story-number {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    letter-spacing: 3px;
+    color: #bd858c;
+    margin-bottom: 12px;
+}
+
+.story-entry .story-date {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #a77c79;
+    margin-bottom: 10px;
+}
+
+.story-entry h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 29px;
+    color: #93636b;
+    margin-bottom: 22px;
+    text-align: left;
+}
+
+.story-entry p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    line-height: 2;
+    color: #705957;
+    text-align: left;
+    margin-bottom: 17px;
+    white-space: normal;
+}
+
+.story-entry p:last-child {
+    margin-bottom: 0;
+}
+
+.story-entry em {
+    color: #986b72;
+}
+
+@media (max-width: 750px) {
+    .story-timeline {
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .story-entry {
+        padding: 28px 22px;
+    }
+
+    .story-entry h3 {
+        font-size: 25px;
+    }
+
+    .story-entry p {
+        font-size: 12px;
+        line-height: 1.9;
+    }
+}
